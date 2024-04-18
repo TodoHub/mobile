@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".TaskActivity">
 
     <TextView
         android:id="@+id/titleTask"
@@ -21,7 +21,7 @@
         android:textSize="26sp" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -44,7 +44,7 @@
         android:textSize="26sp" />
 
     <RadioButton
-        android:id="@+id/radioCheckStage"
+        android:id="@+id/radioStep"
         android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -66,7 +66,7 @@
         android:textSize="20dp" />
 
     <RadioButton
-        android:id="@+id/radioButton4"
+        android:id="@+id/radioStep2"
         android:layout_width="32dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -101,7 +101,7 @@
         android:textSize="20dp" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btnAddStep"
         android:layout_width="42dp"
         android:layout_height="37dp"
         android:layout_alignParentStart="true"
@@ -123,7 +123,7 @@
         android:backgroundTint="#4B39EF" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btnChat"
         android:layout_width="48dp"
         android:layout_height="35dp"
         android:layout_alignParentStart="true"
@@ -131,7 +131,8 @@
         android:layout_marginStart="31dp"
         android:layout_marginBottom="14dp"
         android:backgroundTint="#00FFFFFF"
-        app:srcCompat="@drawable/ic_chat" />
+        app:srcCompat="@drawable/ic_chat"
+        android:onClick="onChatButtonClick" />
 
     <TextView
         android:id="@+id/data"
@@ -148,7 +149,7 @@
         android:textSize="15sp" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/btnDeleteTask"
         android:layout_width="38dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"

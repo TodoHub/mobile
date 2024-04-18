@@ -1,42 +1,45 @@
 package com.todohub.mobile
 
+import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class TaskActivity : AppCompatActivity() {
 
     private var isRadioChecked = false
     private lateinit var radioCheck: RadioButton
     private lateinit var titleTask: TextView
+    private lateinit var btnChat: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_task)
 
-        // Encontre as visualizações pelo ID
         radioCheck = findViewById(R.id.radioCheck)
         titleTask = findViewById(R.id.titleTask)
+        btnChat = findViewById(R.id.btnChat)
 
-        // Adicione um ouvinte de clique ao botão de rádio
         radioCheck.setOnClickListener {
-            // Inverte o estado do isRadioChecked
             isRadioChecked = !isRadioChecked
             updateTitle("Title Task")
         }
 
-        // Atualize o título inicialmente
+        btnChat.setOnClickListener {
+            val intent = Intent(this, ChatTaskActivity::class.java)
+            startActivity(intent)
+        }
+
         updateTitle("Title Task")
     }
 
     private fun updateTitle(title: String) {
-        // Atualize o texto do título com base na variável isRadioChecked
         val isCheckedTask = if (isRadioChecked) title else title
         titleTask.text = isCheckedTask
 
-        // Adicione uma linha atravessando o texto se o botão de rádio estiver selecionado
         if (isRadioChecked) {
             titleTask.paintFlags = titleTask.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         } else {
