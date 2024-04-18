@@ -1,59 +1,46 @@
 package com.todohub.mobile
 
+import android.graphics.Paint
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.widget.RadioButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import com.todohub.mobile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    private var isRadioChecked = false
+    private lateinit var radioCheck: RadioButton
+    private lateinit var titleTask: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        // Encontre as visualizações pelo ID
+        radioCheck = findViewById(R.id.radioCheck)
+        titleTask = findViewById(R.id.titleTask)
 
-        setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
+        // Adicione um ouvinte de clique ao botão de rádio
+        radioCheck.setOnClickListener {
+            // Inverte o estado do isRadioChecked
+            isRadioChecked = !isRadioChecked
+            updateTitle("Title Task")
         }
+
+        // Atualize o título inicialmente
+        updateTitle("Title Task")
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
+    private fun updateTitle(title: String) {
+        // Atualize o texto do título com base na variável isRadioChecked
+        val isCheckedTask = if (isRadioChecked) title else title
+        titleTask.text = isCheckedTask
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+        // Adicione uma linha atravessando o texto se o botão de rádio estiver selecionado
+        if (isRadioChecked) {
+            titleTask.paintFlags = titleTask.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+        } else {
+            titleTask.paintFlags = titleTask.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
     }
 }

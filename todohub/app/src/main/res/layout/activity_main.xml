@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,27 +7,155 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <TextView
+        android:id="@+id/titleTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="31dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Title Task"
+        android:textColor="#000000"
+        android:textSize="26sp" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="31dp"
+        android:backgroundTint="#002B2D30"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <RadioButton
+        android:id="@+id/radioCheck"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="27dp"
+        android:outlineProvider="background"
+        android:textColorLink="#4B39EF"
+        android:textSize="26sp" />
+
+    <RadioButton
+        android:id="@+id/radioCheckStage"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="80dp" />
+
+    <TextView
+        android:id="@+id/titleStap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Stap 1"
+        android:textColor="#8F7D7D"
+        android:textSize="20dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="122dp" />
+
+    <TextView
+        android:id="@+id/titleStap2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Stap 2"
+        android:textColor="#8F7D7D"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/addStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="172dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Add Stap"
+        android:textColor="#4B39EF"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="42dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="170dp"
+        android:backgroundTint="#00CAB2B2"
+        app:srcCompat="@drawable/baseline_add_circle_outline_24" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="64dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="#4B39EF" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="48dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/ic_chat" />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="10/10/2024"
+        android:textAlignment="center"
+        android:textColor="#B3A7A7"
+        android:textSize="15sp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="38dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/ic_delete_task" />
+
+</RelativeLayout>
