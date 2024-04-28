@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".TaskActivity">
+
+    <TextView
+        android:id="@+id/titleTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="31dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Title Task"
+        android:textColor="#000000"
+        android:textSize="26sp" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="31dp"
+        android:backgroundTint="#002B2D30"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <RadioButton
+        android:id="@+id/radioCheck"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="27dp"
+        android:outlineProvider="background"
+        android:textColorLink="#4B39EF"
+        android:textSize="26sp" />
+
+    <RadioButton
+        android:id="@+id/radioStep"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="80dp" />
+
+    <TextView
+        android:id="@+id/titleStap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Stap 1"
+        android:textColor="#8F7D7D"
+        android:textSize="20dp" />
+
+    <RadioButton
+        android:id="@+id/radioStep2"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="122dp" />
+
+    <TextView
+        android:id="@+id/titleStap2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Stap 2"
+        android:textColor="#8F7D7D"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/addStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="172dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Add Stap"
+        android:textColor="#4B39EF"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/btnAddStep"
+        android:layout_width="42dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="170dp"
+        android:backgroundTint="#00CAB2B2"
+        app:srcCompat="@drawable/baseline_add_circle_outline_24" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="64dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="#4B39EF" />
+
+    <ImageButton
+        android:id="@+id/btnChat"
+        android:layout_width="48dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/ic_chat"
+        android:onClick="onChatButtonClick" />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="10/10/2024"
+        android:textAlignment="center"
+        android:textColor="#B3A7A7"
+        android:textSize="15sp" />
+
+    <ImageButton
+        android:id="@+id/btnDeleteTask"
+        android:layout_width="38dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/ic_delete_task" />
+
+</RelativeLayout>
